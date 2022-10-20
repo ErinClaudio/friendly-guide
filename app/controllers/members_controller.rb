@@ -2,13 +2,14 @@ class MembersController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    binding.pry
     user = get_user_from_token
     render json: {
       message: "if you are seeing this, you are in",
       user: user
     }
   end
-  
+
   private
 
   def get_user_from_token
