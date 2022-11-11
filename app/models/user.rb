@@ -5,4 +5,6 @@ class User < ApplicationRecord
   :jwt_authenticatable,
   jwt_revocation_strategy: JwtDenylist
 
+  validates :email, uniqueness: true
+
 end
