@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, defaults: { format: :json }
+  get "oauth/authorize" => "oauth#authorize"
+  get "oauth/exchange_token" => "oauth#exchange_token"
+  get "activities" => "activities#index"
+  delete "session" => "session#destroy"
 end
